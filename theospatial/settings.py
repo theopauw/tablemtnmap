@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,6 +30,7 @@ ALLOWED_HOSTS = ["theo-spatial.online"]
 # Application definition
 INSTALLED_APPS = [
     'index.apps.IndexConfig',
+    'tablemtnmap.apps.TablemtnmapConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,7 +55,9 @@ ROOT_URLCONF = 'theospatial.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,7 +79,9 @@ DATABASES = {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'django_theospatial',
         'USER': 'django',
-        'PASSWORD': 'ICEYE1@3'
+        'PASSWORD': 'ICEYE1@3',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
