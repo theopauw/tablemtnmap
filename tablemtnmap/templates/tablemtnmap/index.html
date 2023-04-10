@@ -1,8 +1,16 @@
 {% extends "base.html" %}
-
-{% block header %}
+{% load static %}
+{% block includes %}
+    <script src="{% static 'lib/ol/v7_3_0/ol.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'lib/ol/v7_3_0/ol.css' %}">
+{% endblock %}
+{% block headerContents %}
   <h1>Theo's Geospatial Demo</h1>
 {% endblock %}
 {% block content %}
-<div id="mapDiv"> Table map goes here </div>
+<div id="mapDiv"></div>
+{% endblock %}
+{% block bottomIncludesContents %}
+    <script type="module" src="{% static 'tablemtnmap/main.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'tablemtnmap/main.css' %}">
 {% endblock %}

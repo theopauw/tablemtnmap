@@ -2,11 +2,27 @@
 <html lang="en">
 <head>
     {% block title %}<title>Theo's Geospatial Demo</title>{% endblock %}
+    {% load static %}
+    {% block includes %}
+        <!-- script/style tags at the top -->
+    {% endblock %}
 </head>
 <body>
-    {% block header %}<!-- insert default header for every page -->{% endblock %}
+    {% block header %}
+        <header>
+            {% block headerContents %}
+                <!-- insert default header for every page -->
+            {% endblock %}
+        </header>
+    {% endblock %}
     {% block sidebar %}<!-- insert default navigation text for every page -->{% endblock %}
     {% block content %}<!-- default content text (typically empty) -->{% endblock %}
+    {% block bottomIncludes %}
+        <!-- script/style tags at the end -->
+        <link rel="stylesheet" href="{% static 'base.css' %}">
+        {% block bottomIncludesContents %}
+        {% endblock %}
+    {% endblock %}
 </body>
 </html>
 
