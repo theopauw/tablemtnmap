@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
 {% block includes %}
-    <script src="{% static 'lib/ol/v7_3_0/ol.js' %}"></script>
     <link rel="stylesheet" href="{% static 'lib/ol/v7_3_0/ol.css' %}">
-{% endblock %}
-{% block headerContents %}
-  <h1>Theo's Geospatial Demo</h1>
+    <link rel="stylesheet" href="{% static 'lib/olcs/v2_13_1/olcs.css' %}">
+    <script src="{% static 'lib/ol/v7_3_0/ol.js' %}"></script>
+    <script src="{% static 'lib/olcs/v2_13_1/olcesium.js' %}"></script>
+    <!--<script src="{% static 'lib/cesium/v1_104/cesium.min.js' %}"></script>-->
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.81/Build/Cesium/Cesium.js"></script>
 {% endblock %}
 {% block content %}
-<div id="mapDiv"></div>
+<div id="mapDiv">
+</div>
 {% endblock %}
-{% block bottomIncludesContents %}
+{% block bottomIncludes %}
     <script type="module" src="{% static 'tablemtnmap/main.js' %}"></script>
     <link rel="stylesheet" href="{% static 'tablemtnmap/main.css' %}">
 {% endblock %}

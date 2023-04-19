@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block title %}<title>Theo's Geospatial Demo</title>{% endblock %}
     {% load static %}
+    <link rel="stylesheet" href="{% static 'lib/bootstrap/v5_3_0/bootstrap.min.css' %}">
     {% block includes %}
         <!-- script/style tags at the top -->
     {% endblock %}
 </head>
 <body>
-    {% block header %}
-        <header>
-            {% block headerContents %}
-                <!-- insert default header for every page -->
-            {% endblock %}
-        </header>
-    {% endblock %}
-    {% block sidebar %}<!-- insert default navigation text for every page -->{% endblock %}
-    {% block content %}<!-- default content text (typically empty) -->{% endblock %}
-    {% block bottomIncludes %}
-        <!-- script/style tags at the end -->
-        <link rel="stylesheet" href="{% static 'base.css' %}">
-        {% block bottomIncludesContents %}
+    <div class="d-flex flex-column vh-100 vw-100 px-0">
+        {% block header %}
+            <nav class="navbar bg-body-tertiary">
+              <div class="container-fluid justify-content-center">
+                <a class="navbar-brand" href="#">Theo's Geospatial Demo</a>
+              </div>
+            </nav>
         {% endblock %}
-    {% endblock %}
+        {% block sidebar %}<!-- insert default navigation text for every page -->{% endblock %}
+        {% block content %}<!-- default content text (typically empty) -->{% endblock %}
+        <link rel="stylesheet" href="{% static 'base.css' %}">
+        <script src="{% static 'lib/bootstrap/v5_3_0/bootstrap.bundle.min.js' %}"></script>
+        {% block bottomIncludes %}
+            <!-- script/style tags at the end -->
+        {% endblock %}
+    </div>
 </body>
 </html>
 

@@ -1,8 +1,22 @@
 {% extends "base.html" %}
-
-{% block header %}
-  <h1>Theo's Geospatial Demo</h1>
+{% load static %}
+{% block includes %}
+    <link rel="stylesheet" href="{% static 'index/main.css' %}">
 {% endblock %}
 {% block content %}
-    <a href="{% url 'tablemtnmap-index' %}">Table Mountain Map</a>
+<div id="contentDiv" class="container-fluid bg-image d-flex flex-grow-1 px-0">
+    <div class="mask h-100 w-100">
+        <ul class="nav flex-column align-items-center h-100 pt-5">
+          <li class="nav-item mt-1">
+            <a class="nav-link" href="{% url 'tablemtnmap-index' %}">Table Mountain Map</a>
+          </li>
+          <li class="nav-item mt-1">
+            <a class="nav-link" href="http://gitea.theo-spatial.online">Gitea repo for this project</a>
+          </li>
+          <li class="nav-item mt-1">
+            <a class="nav-link" href="#">Curriculum Vitae</a>
+          </li>
+        </ul>
+    </div>
+</div>
 {% endblock %}
