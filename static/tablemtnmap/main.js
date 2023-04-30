@@ -69,6 +69,18 @@ scene3d.camera.moveEnd.addEventListener(function() {
     console.log(scene3d.camera.up);
 });
 map3d.setEnabled(true);
+//get the container with all the ol controls (zoom etc)
+const olContainerDiv = document.querySelector(".ol-overlaycontainer-stopevent");
+//ol-cesium hides the controls, put them back
+//I would prefer to put this in css normally but I think ol-cesium does this programmatically
+olContainerDiv.style.zIndex = 1;
+//add the Cesium NavigationHelpButton to the ol controls container
+const navigationHelpButtonContainer = document.createElement('div');
+navigationHelpButtonContainer.className = "navigationHelpButtonControl ol-control ol-unselectable";
+olContainerDiv.appendChild(navigationHelpButtonContainer);
+const navigationHelpButton = new Cesium.NavigationHelpButton({
+    container: navigationHelpButtonContainer
+});
 scene3d.camera.setView({
     destination: new Cesium.Cartesian3(
         5030765.238311895,

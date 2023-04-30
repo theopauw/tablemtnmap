@@ -1,4 +1,59 @@
+:root {
+  --ol-background-color: rgba(38,38,38,.75);
+  --noalpha-background-color: rgb(38,38,38);
+  --ol-subtle-foreground-color: rgba(245,245,245,.75);
+  --ol-foreground-color: rgba(255,255,255,.85);
+}
 #mapDiv {
     height: 100%;
     width: 100vw;
+}
+.navigationHelpButtonControl {
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    pointer-events: auto;
+}
+/* Position the North up control and make it bold */
+.ol-rotate {
+    top: 2.125em;
+}
+.ol-compass {
+    font-weight: bold;
+}
+/* Style Cesium's SVG icon for the help button */
+.cesium-svgPath-svg {
+    width: 1em;
+    height: 1em;
+    fill: var(--ol-subtle-foreground-color);
+}
+/* Change span containing help button so it doesn't have empty space at the top */
+.cesium-navigationHelpButton-wrapper {
+    vertical-align: top;
+}
+/* Fix the styling of help popup */
+.cesium-navigation-help {
+    top: 0px;
+    right: 1.875em;
+    transform-origin: 250px 0px;
+    opacity: 0.75
+}
+body .cesium-navigation-button {
+    display: inline-block;
+    margin: 0;
+    width: calc(50% - 1px);
+    background-color: var(--noalpha-background-color);
+}
+body .cesium-navigation-button-left {
+    border-radius: 2px 0 0 0;
+    margin-right: 1px;
+}
+body .cesium-navigation-button-right {
+    border-radius: 0 2px 0 0;
+    margin-left: 1px;
+}
+.cesium-navigation-help-instructions {
+    border-radius: 0 0  2px 2px;
+    border-color: var(--noalpha-background-color);
+    background-color: var(--noalpha-background-color);
 }
