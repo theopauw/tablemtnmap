@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--ep1fw)rp#x(*+pfc*q1!inuodj3za-to%3i@22gfo9aa&dnmr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["theo-spatial.online"]
 

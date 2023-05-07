@@ -1,12 +1,30 @@
 :root {
-  --ol-background-color: rgba(38,38,38,.75);
-  --noalpha-background-color: rgb(38,38,38);
-  --ol-subtle-foreground-color: rgba(245,245,245,.75);
-  --ol-foreground-color: rgba(255,255,255,.85);
+    --ol-background-color: rgba(38,38,38,.75);
+    --noalpha-background-color: rgb(38,38,38);
+    --ol-subtle-foreground-color: rgba(245,245,245,.75);
+    --ol-foreground-color: rgba(255,255,255,.85);
+    --trail-colour-default: #d7bd48;
+    --trail-colour-platteklip: #e3531a;
+    --trail-colour-duiwelspiek: #40c5d7;
+    --trail-colour-skeletongorge: #8739be;
+    --trail-colour-smutstrack: #45b663;
+    --trail-colour-kasteelpoort: #7a4b45;
+    --trail-colour-leeukop: #1839dd;
+    --trail-colour-wagonroad: #d55bb0;
 }
 #mapDiv {
     height: 100%;
     width: 100vw;
+}
+#trailSelectControl {
+    bottom: .5em;
+    right: .5em;
+    z-index: 1;
+    background-color: var(--ol-background-color);
+    color: var(--ol-foreground-color);
+    border-radius: 2px;
+    padding: 0.25em;
+    font-size: 0.9em;
 }
 .navigationHelpButtonControl {
     position: absolute;
@@ -56,4 +74,28 @@ body .cesium-navigation-button-right {
     border-radius: 0 0  2px 2px;
     border-color: var(--noalpha-background-color);
     background-color: var(--noalpha-background-color);
+}
+#harbourRow {
+    color: var(--trail-colour-default);
+}
+#platteklipRow {
+    color: var(--trail-colour-platteklip);
+}
+#duiwelspiekRow {
+    color: var(--trail-colour-duiwelspiek);
+}
+#skeletongorgeRow {
+    color: var(--trail-colour-skeletongorge);
+}
+#smutstrackRow {
+    color: var(--trail-colour-smutstrack);
+}
+#kasteelpoortRow {
+    color: var(--trail-colour-kasteelpoort);
+}
+#leeukopRow {
+    color: var(--trail-colour-leeukop);
+}
+#wagonroadRow {
+    color: var(--trail-colour-wagonroad);
 }
