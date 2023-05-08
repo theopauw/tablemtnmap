@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--ep1fw)rp#x(*+pfc*q1!inuodj3za-to%3i@22gfo9aa&dnmr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["theo-spatial.online"]
 
@@ -74,12 +74,11 @@ WSGI_APPLICATION = 'theospatial.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+# secrets in __init__.py, which must be in .gitignore
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'django_theospatial',
-        'USER': 'django',
-        'PASSWORD': 'ICEYE1@3',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
