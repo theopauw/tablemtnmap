@@ -4,14 +4,10 @@ This is a small [Django](https://www.djangoproject.com/) project I made as a dem
 
 Folder structure:
 
-index/ - Django app for index page.
-
-static/ - All static files (js, css, images).
-
-tablemtnmap/ - Django app for Table Mountain 3D Trail Viewer
-
-templates/ - Django templates (html) shared between apps (index and tablemtnmap also have their own).
-
+index/ - Django app for index page.  
+static/ - All static files (js, css, images).  
+tablemtnmap/ - Django app for Table Mountain 3D Trail Viewer  
+templates/ - Django templates (html) shared between apps (index and tablemtnmap also have their own).  
 theospatial/ - Django Project folder.
 
 ## Table Mountain 3D Trail Viewer
