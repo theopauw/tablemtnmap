@@ -1,6 +1,6 @@
 #contentDiv {
     background-image: url("img/calvinia_pad3.jpg");
-    background-size: cover;
+    background-size: 100% 100%;
 }
 .mask {
      background-color: rgba(0, 0, 0, 0.6);

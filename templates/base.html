@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,9 +13,16 @@
 <body>
     <div class="d-flex flex-column vh-100 vw-100 px-0">
         {% block header %}
-            <nav class="navbar bg-body-tertiary">
-              <div class="container-fluid justify-content-center">
-                <a class="navbar-brand" href="#">Theo's Geospatial Demo</a>
+            <nav class="navbar navbar-expand bg-body-tertiary">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="/">Theo's Geospatial Demo</a>
+                {% block loginBtn %}
+                {% if user.is_authenticated %}
+                <a class="btn" href="{% url 'logout' %}">LOG OUT</a>
+                {% else %}
+                <a class=btn href="{% url 'login' %}">LOG IN</a>
+                {% endif %}
+                {% endblock %}
               </div>
             </nav>
         {% endblock %}
