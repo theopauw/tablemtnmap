@@ -1,8 +1,8 @@
-#Theo's Geospatial Demo
+# Theo's Geospatial Demo
 
 This is a small [Django](https://www.djangoproject.com/) project I made as a demonstration. It uses built-in Django authentication and has an index page. Styling is mostly done with [Bootstrap 5](https://getbootstrap.com/).
 
-##Table Mountain 3D Trail Viewer
+## Table Mountain 3D Trail Viewer
 
 This app uses [ol-cesium](https://openlayers.org/ol-cesium/) to create a 3D viewer of some popular hiking trails around Cape Town's iconic Table Mountain. I have worked with [OpenLayers](https://openlayers.org/) extensively but have never used [Cesium](https://www.cesium.com/) or ol-cesium before and I was keen to try it out. 
 
@@ -13,7 +13,7 @@ The zoom and North-up controls are the default ones from OpenLayers. I also adde
 Data: Trails obtained from the [OpenStreetMap](https://www.openstreetmap.org/) roads layer as downloaded from [BBBike](https://extract.bbbike.org/). I cleaned it up a bit in QGIS and uploaded it to PostGIS. It is served through [MapServer](https://mapserver.org/) and [MapCache](https://mapserver.org/mapcache/index.html#mapcache) as vector tiles (MVT).
 Satellite backdrop from [Mapbox](https://docs.mapbox.com/data/tilesets/reference/mapbox-satellite/).
 
-##Server and software
+## Server and software
 
 VM: Shared-CPU VM at [Linode](https://www.linode.com/products/shared/) running [Rocky Linux 9](https://rockylinux.org/).
 Webserver: [Apache](https://httpd.apache.org/) with [mod_wsgi](https://modwsgi.readthedocs.io/en/master/) to run Django.
