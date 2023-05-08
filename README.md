@@ -16,8 +16,13 @@ Satellite backdrop from [Mapbox](https://docs.mapbox.com/data/tilesets/reference
 ## Server and software
 
 VM: Shared-CPU VM at [Linode](https://www.linode.com/products/shared/) running [Rocky Linux 9](https://rockylinux.org/).
+
 Webserver: [Apache](https://httpd.apache.org/) with [mod_wsgi](https://modwsgi.readthedocs.io/en/master/) to run Django.
+
 GIS Server:  [MapServer 8.0](https://mapserver.org/) and [MapCache 1.14](https://mapserver.org/mapcache/index.html#mapcache). MapServer was installed from [EPEL 9](https://docs.fedoraproject.org/en-US/epel/) but MapCache had to be build from source (used [RPMBuild](https://www.redhat.com/sysadmin/create-rpm-package) to create an RPM file that can be installed with DNF - now hopefully it won't break when updating the system).
+
 Database: [PostgreSQL 15](https://www.postgresql.org/docs/15/index.html) with [PostGIS 3.3](http://postgis.net/) - installed from [PGDG repos](https://www.postgresql.org/download/linux/redhat/).
+
 Gitea: [Self-hosted Git service](https://gitea.io/en-us/). Installed as a Linux service.
+
 Domain: purchased from [Domains.co.za](https://www.domains.co.za/).
