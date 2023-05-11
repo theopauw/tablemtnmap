@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["theo-spatial.online"]
 INSTALLED_APPS = [
     'index.apps.IndexConfig',
     'tablemtnmap.apps.TablemtnmapConfig',
+    'userprofile.apps.UserprofileConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
