@@ -1,0 +1,13 @@
+#formErrors {
+    width: 400px;
+}
+#userProfileForm {
+    width: 400px;
+}
+#contentDiv {
+    background-image: url("/static/index/img/diemond_rivier_min.jpg");
+    background-size: 100% 100%;
+}
+.mask {
+     background-color: rgba(0, 0, 0, 0.6);
+}

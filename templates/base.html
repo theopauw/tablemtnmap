@@ -18,13 +18,39 @@
                 <a class="navbar-brand" href="/">Theo's Geospatial Demo</a>
                 {% block loginBtn %}
                 {% if user.is_authenticated %}
-                <a class="btn" href="{% url 'logout' %}">LOG OUT</a>
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">USER</button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="{% url 'logout' %}">LOG OUT</a></li>
+                        <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#profileModal">PROFILE</button></li>
+                        <li><a class="dropdown-item" href="{% url 'admin:index' %}">ADMIN</a></li>
+                    </ul>
+                </div>
                 {% else %}
                 <a class=btn href="{% url 'login' %}">LOG IN</a>
                 {% endif %}
                 {% endblock %}
               </div>
             </nav>
+        {% endblock %}
+        {% block profileModal %}
+            <!-- Modal -->
+            <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="profileModalLabel">User Profile</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div>{{user.username}}</div>
+                        </div>
+                        <div class="modal-footer">
+                            <a class=btn href="{% url 'userprofile' %}">EDIT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         {% endblock %}
         {% block sidebar %}<!-- insert default navigation text for every page -->{% endblock %}
         {% block content %}<!-- default content text (typically empty) -->{% endblock %}

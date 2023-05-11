@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- Don't show loginBtn on login screen -->
+{% block loginBtn %}
+{% endblock %}
+{% block content %}
+<div id="contentDiv" class="container-fluid bg-image d-flex flex-grow-1 px-0">
+    <div class="mask h-100 w-100 d-flex flex-column">
+        <div class="form-content mx-auto my-auto">
+            <form id=userProfileForm method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label">Username:</label>
+                    <div class="form-control">{{ user_form.username }}</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email:</label>
+                    <div class="form-control">{{ user_form.email }}</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Address:</label>
+                    <div class="form-control">{{ profile_form.address }}</div>
+                </div>
+                <button type="submit" class="btn float-end">SAVE</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+{% block bottomIncludes %}
+    <link rel="stylesheet" href="{% static 'userprofile/main.css' %}">
+{% endblock %}

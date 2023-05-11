@@ -3,6 +3,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path('tablemtnmap/', include("tablemtnmap.urls")),
+    path('userprofile/', include("userprofile.urls")),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', include("index.urls")),
