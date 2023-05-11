@@ -1,4 +1,6 @@
 __pycache__/*
 */__pycache__/*
 */*/__pycache__/*
-__init__.py
+# don't track init.py in settings, we use it to store secrets
+# new projects can create it from __init__.template (which is tracked)
+theospatial/settings/__init__.py
