@@ -6,17 +6,11 @@
 {% endblock %}
 {% block content %}
 <div id="contentDiv" class="container-fluid bg-image d-flex flex-grow-1 px-0">
-    <div class="mask h-100 w-100 d-flex">
+    <div class="mask h-100 w-100 d-flex flex-column">
         {% if form.errors %}
-            <p>Your username and password didn't match. Please try again.</p>
-        {% endif %}
-        {% if next %}
-            {% if user.is_authenticated %}
-                <p>Your account doesn't have access to this page. To proceed,
-                please login with an account that has access.</p>
-            {% else %}
-                <p>Please login to see this page.</p>
-            {% endif %}
+            <div id="formErrors" class="mx-auto pt-2">
+                <p>Your username and password didn't match. Please try again.</p>
+            </div>
         {% endif %}
         <form id="loginForm" class="mx-auto my-auto" method="post" action="{% url 'login' %}">
             {% csrf_token %}
