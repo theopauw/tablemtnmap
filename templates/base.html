@@ -21,9 +21,9 @@
                 <div class="dropdown">
                     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">USER</button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="{% url 'logout' %}">LOG OUT</a></li>
                         <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#profileModal">PROFILE</button></li>
                         <li><a class="dropdown-item" href="{% url 'admin:index' %}">ADMIN</a></li>
+                        <li><a class="dropdown-item text-danger-emphasis" href="{% url 'logout' %}">LOG OUT</a></li>
                     </ul>
                 </div>
                 {% else %}

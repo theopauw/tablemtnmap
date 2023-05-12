@@ -1,8 +1,21 @@
 #formErrors {
     width: 400px;
 }
-#userProfileForm {
+#profileDiv {
     width: 400px;
+    max-width: 75%;
+}
+#userProfileForm {
+    width: 100%;
+}
+#userProfileForm input {
+    width: 100%;
+}
+#userProfileForm .form-control {
+    opacity: 0.75;
+}
+#userProfileForm .btn {
+    min-width: 90px;
 }
 #contentDiv {
     background-image: url("/static/index/img/diemond_rivier_min.jpg");
