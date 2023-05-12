@@ -1,0 +1,17 @@
+:root {
+    --ol-background-color: rgba(38,38,38,.75);
+    --noalpha-background-color: rgb(38,38,38);
+    --ol-subtle-foreground-color: rgba(245,245,245,.75);
+    --ol-foreground-color: rgba(255,255,255,.85);
+}
+#mapDiv {
+    height: 100%;
+    width: 100vw;
+}
+/* Position the North up control and make it bold */
+.ol-rotate {
+    top: 2.125em;
+}
+.ol-compass {
+    font-weight: bold;
+}

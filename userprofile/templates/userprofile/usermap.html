@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+{% block includes %}
+    <link rel="stylesheet" href="{% static 'lib/ol/v7_3_0/ol.css' %}">
+    <script src="{% static 'lib/ol/v7_3_0/ol.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div id="mapDiv">
+</div>
+{% endblock %}
+{% block bottomIncludes %}
+    <script type="module" src="{% static 'userprofile/usermap.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'userprofile/usermap.css' %}">
+{% endblock %}
