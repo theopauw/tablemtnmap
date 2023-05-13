@@ -19,13 +19,19 @@ class CustomUserAdmin(UserAdmin):
     '''def has_view_permission(self, request, obj=None):
         if request.user.is_superuser or request.user.is_staff:
             return True
-        return True'''
+        return False'''
     #non-superuser can only view own details
     def get_queryset(self, request):
         qs = super().get_queryset(request)
         if request.user.is_superuser:
             return qs
         return qs.filter(id=request.user.id)
+    #new users are created as staff by default (can log in to admin))
+    def save_model(self, request, obj, form, change):
+        #only superuser should be creating new users as staff
+        if request.user.is_superuser:
+            obj.is_staff = True
+        super().save_model(request, obj, form, change)
 
 # Re-register UserAdmin
 admin.site.unregister(User)
