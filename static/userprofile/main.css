@@ -1,3 +1,9 @@
+:root {
+    --ol-background-color: rgba(38,38,38,.75);
+    --noalpha-background-color: rgb(38,38,38);
+    --ol-subtle-foreground-color: rgba(245,245,245,.75);
+    --ol-foreground-color: rgba(255,255,255,.85);
+}
 #formErrors {
     width: 400px;
 }
@@ -20,7 +26,12 @@
 #contentDiv {
     background-image: url("/static/index/img/diemond_rivier_min.jpg");
     background-size: 100% 100%;
+    height: calc(100vh - 65px)
 }
 .mask {
      background-color: rgba(0, 0, 0, 0.6);
+}
+#id_location_map {
+    width: 100% !important;
+    height: 400px !important;
 }

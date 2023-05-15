@@ -14,12 +14,6 @@ class UserDetailsInline(admin.StackedInline):
 class CustomUserAdmin(UserAdmin):
     #also view user details
     inlines = [UserDetailsInline]
-    #tried to make that all superusers and staff have view permission
-    #but this doesn't work sadly. TODO check
-    '''def has_view_permission(self, request, obj=None):
-        if request.user.is_superuser or request.user.is_staff:
-            return True
-        return False'''
     #non-superuser can only view own details
     def get_queryset(self, request):
         qs = super().get_queryset(request)

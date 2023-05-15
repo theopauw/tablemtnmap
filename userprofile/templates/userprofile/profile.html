@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block includes %}
+    <link rel="stylesheet" href="{% static 'lib/ol/v7_3_0/ol.css' %}">
+    <script src="{% static 'lib/ol/v7_3_0/ol.js' %}"></script>
+    <!--<link rel="stylesheet" href="{% static 'static/gis/css/ol3.css' %}">-->
+    <script src="{% static 'gis/js/OLMapWidget.js' %}"></script>
+{% endblock %}
 <!-- Don't show loginBtn on login screen -->
 {% block loginBtn %}
 {% endblock %}
@@ -8,7 +14,7 @@
 {% endblock %}
 {% block content %}
 <div id="contentDiv" class="container-fluid bg-image d-flex flex-grow-1 px-0">
-    <div class="mask h-100 w-100 d-flex flex-column">
+    <div class="mask h-100 w-100 d-flex flex-column overflow-auto py-3">
         <div id="profileDiv" class="form-content mx-auto my-auto">
             <form id="userProfileForm" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
@@ -21,8 +27,24 @@
                     <div class="form-control">{{ user_form.email }}</div>
                 </div>
                 <div class="mb-3">
+                    <label class="form-label">First Name:</label>
+                    <div class="form-control">{{ user_form.first_name }}</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Last Name:</label>
+                    <div class="form-control">{{ user_form.last_name }}</div>
+                </div>
+                <div class="mb-3">
                     <label class="form-label">Address:</label>
                     <div class="form-control">{{ profile_form.address }}</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Location:</label>
+                    <div class="form-control">{{ profile_form.location }}</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phone Number:</label>
+                    <div class="form-control">{{ profile_form.phone_number }}</div>
                 </div>
                 <button type="submit" class="btn btn-outline-success float-end ms-2">SAVE</button>
                 <a class="btn btn-outline-danger float-end" href="{% url 'index' %}">CANCEL</a>
