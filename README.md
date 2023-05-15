@@ -42,9 +42,9 @@ Domain: purchased from [Domains.co.za](https://www.domains.co.za/).
 
 ## Deployment  
 
-Python requirements are indicated in requirements.txt.  
+Requires PostgreSQL and PostGIS. Python requirements are indicated in requirements.txt.  
 
-The settings setup is customised to allow for multiple deployments to be included in version control. Note that theospatial/settings/__init__.py is added to .gitignore - this file is used to store secrets (e.g. db user and password) and to select which settings file to use. For a new deployment:  
-* Copy __init__.template to __init__.py (don't rename).  
+The settings setup is customised to allow for multiple deployments to be included in version control. Note that theospatial/settings/\__init__.py is added to .gitignore - this file is used to store secrets (e.g. db user and password) and to select which settings file to use. For a new deployment:  
+* Copy \__init__.template to \__init__.py (don't rename).  
 * Add any secrets to this file (the template provides some guidance regarding db).
-* Non-secret settings: copy theospatial/settings/dev.py, edit copy as necessary and change the import line in __init__.py to import from .mynewdev in stead of .dev  
+* Non-secret settings: copy theospatial/settings/dev.py, edit copy as necessary and change the import line in \__init__.py to import from .mynewdev in stead of .dev  
