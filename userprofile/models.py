@@ -1,6 +1,8 @@
-from django.contrib.gis.db import models
 from django.contrib.auth.models import User
+from django.contrib.auth.signals import user_logged_in, user_logged_out, user_login_failed
+from django.contrib.gis.db import models
 from django.core.validators import RegexValidator
+from django.dispatch import receiver
 
 class UserDetails(models.Model):
     id = models.AutoField(primary_key=True, null=False)
@@ -15,3 +17,31 @@ class UserRightsDemo(models.Model):
     id = models.AutoField(primary_key=True, null=False)
     StringOne = models.CharField(max_length=100)
     StringTwo = models.CharField(max_length=100)
+
+# Log user login/logout in the db
+# thanks https://stackoverflow.com/questions/37618473/how-can-i-log-both-successful-and-failed-login-and-logout-attempts-in-django
+class AuditEntry(models.Model):
+    action = models.CharField(max_length=64)
+    ip = models.GenericIPAddressField(null=True)
+    username = models.CharField(max_length=256, null=True)
+
+    def __unicode__(self):
+        return '{0} - {1} - {2}'.format(self.action, self.username, self.ip)
+
+    def __str__(self):
+        return '{0} - {1} - {2}'.format(self.action, self.username, self.ip)
+
+
+@receiver(user_logged_in)
+def user_logged_in_callback(sender, request, user, **kwargs):
+    ip = request.META.get('REMOTE_ADDR')
+    AuditEntry.objects.create(action='user_logged_in', ip=ip, username=user.username)
+
+@receiver(user_logged_out)
+def user_logged_out_callback(sender, request, user, **kwargs):
+    ip = request.META.get('REMOTE_ADDR')
+    AuditEntry.objects.create(action='user_logged_out', ip=ip, username=user.username)
+
+@receiver(user_login_failed)
+def user_login_failed_callback(sender, credentials, **kwargs):
+    AuditEntry.objects.create(action='user_login_failed', username=credentials.get('username', None))
