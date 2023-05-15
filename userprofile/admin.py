@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-from .models import UserDetails
+from .models import UserDetails, UserRightsDemo
 
 # Define an inline admin descriptor for Employee model
 # which acts a bit like a singleton
@@ -33,6 +33,18 @@ class CustomUserAdmin(UserAdmin):
             obj.is_staff = True
         super().save_model(request, obj, form, change)
 
+class UserRightsDemoAdmin(admin.ModelAdmin):
+    #only superuser can view
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        if request.user.is_superuser:
+            return qs
+        else:
+            return None
+
+
 # Re-register UserAdmin
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
+# Register UserRightsDemo
+admin.site.register(UserRightsDemo, UserRightsDemoAdmin)
