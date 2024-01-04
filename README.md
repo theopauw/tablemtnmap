@@ -9,7 +9,7 @@ static/ - All static files (js, css, images).
 tablemtnmap/ - Django app for Table Mountain 3D Trail Viewer  
 templates/ - Django templates (html) shared between apps (index and tablemtnmap also have their own).  
 theospatial/ - Django Project folder.
-userprofile/ - Django app for User Profile 
+userprofile/ - Add some features to the Admin page, and a basic map with user location.
 
 ## Table Mountain 3D Trail Viewer
 
@@ -21,10 +21,6 @@ The zoom and North-up controls are the default ones from OpenLayers. I also adde
 
 Data: Trails obtained from the [OpenStreetMap](https://www.openstreetmap.org/) roads layer as downloaded from [BBBike](https://extract.bbbike.org/). I cleaned it up a bit in QGIS and uploaded it to PostGIS. It is served through [MapServer](https://mapserver.org/) and [MapCache](https://mapserver.org/mapcache/index.html#mapcache) as vector tiles (MVT).
 Satellite backdrop from [Mapbox](https://docs.mapbox.com/data/tilesets/reference/mapbox-satellite/).
-
-## User profile app
-
-This app adds  some features to the admin page and user model, and a simple OpenLayers map showing the stored location of all users (for an admin user) or the current user (everyone else).
 
 ## Server and software
 
