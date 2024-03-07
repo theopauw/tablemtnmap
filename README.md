@@ -1,6 +1,6 @@
 # Table Mountain Map
 
-This is a small [Django](https://www.djangoproject.com/) project. It uses built-in Django authentication and has an index page. Styling is mostly done with [Bootstrap 5](https://getbootstrap.com/).
+This is a small [Django](https://www.djangoproject.com/) project I made to play around with OL-Cesium. It uses built-in Django authentication and has an index page. Styling is mostly done with [Bootstrap 5](https://getbootstrap.com/).
 
 Folder structure:
 
