@@ -32,8 +32,6 @@ GIS Server:  [MapServer 8.0](https://mapserver.org/) and [MapCache 1.14](https:/
 
 Database: [PostgreSQL 15](https://www.postgresql.org/docs/15/index.html) with [PostGIS 3.3](http://postgis.net/) - installed from [PGDG repos](https://www.postgresql.org/download/linux/redhat/).
 
-Gitea: [Self-hosted Git service](https://gitea.io/en-us/). Installed as a Linux service.
-
 Domain: purchased from [Domains.co.za](https://www.domains.co.za/).  
 
 ## Deployment  
