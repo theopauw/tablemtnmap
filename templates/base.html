@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% block title %}<title>Theo's Geospatial Demo</title>{% endblock %}
+    {% block title %}<title>Table Mountain 3D Map</title>{% endblock %}
     {% load static %}
     <link rel="stylesheet" href="{% static 'lib/bootstrap/v5_3_0/bootstrap.min.css' %}">
     {% block includes %}
@@ -15,7 +15,7 @@
         {% block header %}
             <nav class="navbar navbar-expand bg-body-tertiary">
               <div class="container-fluid">
-                <a class="navbar-brand" href="/">Theo's Geospatial Demo</a>
+                <a class="navbar-brand" href="/">Table Mountain 3D Map</a>
                 {% block loginBtn %}
                 {% if user.is_authenticated %}
                 <div class="dropdown">
