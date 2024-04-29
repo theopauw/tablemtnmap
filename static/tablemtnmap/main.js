@@ -76,7 +76,7 @@ const getStyle = function(thisColour, thisWidth) {
 }
 function getMVTSource(mapcacheLayer, thisExtent) {
     //const thisURL = "/cgi-bin/mapserv?map=" + mapFileName + "&mode=tile&tilemode=gmap&tile={x}+{y}+{z}&layers=all&map.imagetype=mvt";
-    const thisURL = "http://mapcache.theo-spatial.online/gmaps/" + mapcacheLayer + "@g/{z}/{x}/{y}.mvt";
+    const thisURL = "https://mapcache.theo-spatial.online/gmaps/" + mapcacheLayer + "@g/{z}/{x}/{y}.mvt";
     const thisSource = new ol.source.VectorTile({
         url: thisURL,
         crossOrigin: "anonymous",

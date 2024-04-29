@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure--ep1fw)rp#x(*+pfc*q1!inuodj3za-to%3i@22gfo9aa&dnmr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["theo-spatial.online"]
+ALLOWED_HOSTS = ["172.233.38.98","theo-spatial.online"]
 
 # Application definition
 INSTALLED_APPS = [
